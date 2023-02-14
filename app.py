@@ -8,6 +8,11 @@ from oauth2client.service_account import ServiceAccountCredentials
 import json
 from flask import Flask, Response, make_response
 import io
+import logging
+
+
+logging.basicConfig(level=logging.DEBUG, format='%(asctime)s - %(levelname)s - %(message)s')
+
 
 # Get the credentials for the service account
 scope = ['https://spreadsheets.google.com/feeds', 'https://www.googleapis.com/auth/drive']
@@ -37,6 +42,8 @@ def get_xml():
     # Load the Excel file into a pandas DataFrame
     # Get the data from the worksheet
     df = pd.DataFrame(worksheet.get_all_records())
+    logging.debug(f"df: {df}")
+
 
     df.replace("", np.nan, inplace=True)
     df.fillna(method='ffill', inplace=True)
