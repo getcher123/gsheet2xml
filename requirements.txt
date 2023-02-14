@@ -6,3 +6,4 @@ lxml
 gspread
 gspread-dataframe
 oauth2client
+gunicorn
