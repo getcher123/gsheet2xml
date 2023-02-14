@@ -83,7 +83,7 @@ def get_xml():
     # Write the XML file
     tree = ET.ElementTree(root)
     xml_output = io.StringIO()
-    tree.write(xml_output, encoding="utf-8", xml_declaration=True)
+    tree.write(xml_output, encoding="unicode", xml_declaration=True)
     # Create a Flask response object and set its data to the XML output
     response = make_response(xml_output.getvalue())
     # Set the content type of the response to "text/xml"
