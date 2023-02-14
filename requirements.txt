@@ -1,0 +1,9 @@
+flask
+requests
+pandas
+numpy
+lxml
+gspread
+gspread-dataframe
+oauth2client
+json
