@@ -95,4 +95,5 @@ def get_xml():
     response = make_response(xml_output.getvalue())
     # Set the content type of the response to "text/xml"
     response.headers['Content-Type'] = 'text/xml'
+    response.headers['Access-Control-Allow-Origin'] = '*'
     return response
